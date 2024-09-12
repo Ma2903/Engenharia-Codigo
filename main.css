@@ -14,42 +14,50 @@ body {
     height: 100vh;
     background-color: #F4EEED;
     color: #412d00;
+    font-family: Arial, sans-serif;
 }
 
 /* Define a estilizacao para o cabecalho do site */
 header {
     background-color: #F2DBD5;
     color: #412d00;
-    width: 100vw;
-    height: 13vh;
+    width: 100%;
+    height: 16vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
+/* Estiliza o título */
 header .title {
     color: #412d00;
     padding-top: 1vh;
 }
 
+/* Estiliza o menu de navegação */
 header nav {
     display: flex;
+    flex-direction: row;
     width: 100vw;
-    justify-content: center;
-    align-items: center;
-    margin-top: ;
+    height: 8vh;
 }
 
 header nav a {
     text-decoration: none;
     color: #412d00;
-    margin: 0 5vw;
-    font-size: 2vw;
+    flex: 1;
+    text-align: center;
+    padding: 1vw;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, color 0.3s;
+    box-sizing: border-box;
 }
 
 header nav a:hover {
     background-color: #D9B2A9;
+    color: #fff;
 }
 
 main {
@@ -57,7 +65,37 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    color: #412d00;
+}
+
+main .container form {
+    display: flex;
+    flex-direction: column;
+}
+
+main .container form h1 {
+    padding: 3vh 0 0 0;
+}
+
+main .container form label {
+    padding: 3vh 0 0 0;
+}
+
+main .container form input {
+    height: 5vh;
+}
+
+main .container form button {
+    margin: 5vh;
+    padding: 1vw;
+    background-color: #D9B2A9;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+main .container form button:hover {
+    background-color: #d89889;
 }
 
 footer {
