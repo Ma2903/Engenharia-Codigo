@@ -30,5 +30,4 @@ class Controller {
     public function buscarCliente(){
         $this->DataBase->buscarCliente();
     }
-}
 ?>
