@@ -51,7 +51,7 @@
                         <a href='../editcliente/?cpf={$cliente['cpf']}'>
                             <button>Editar</button>
                         </a>
-                        <a href='delcliente.php?cpf={$cliente['cpf']}' onclick='return confirm(\"Tem certeza que deseja excluir este cliente?\")'>
+                        <a href='../delcliente/?cpf={$cliente['cpf']}' onclick='return confirm(\"Tem certeza que deseja excluir este cliente?\")'>
                             <button>Deletar</button>
                         </a>
                     </td>

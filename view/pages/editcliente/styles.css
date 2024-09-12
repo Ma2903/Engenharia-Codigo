@@ -1,0 +1,82 @@
+/* Importa o CSS global */
+@import url('main.css');
+
+/* Estiliza o cabeçalho específico da página Editar Cliente */
+header {
+    background-color: #F2DBD5;
+    color: #412d00;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Estiliza o container principal da página */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Estiliza o formulário de edição de cliente */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+form input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 0.75rem;
+    background-color: #D9B2A9;
+    border: none;
+    color: #FFF;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #d89889;
+}
+
+/* Estiliza o link de voltar */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: #412d00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estiliza o rodapé específico da página */
+footer {
+    background-color: #F2DBD5;
+    color: #412d00;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+}

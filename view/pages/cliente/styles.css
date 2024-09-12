@@ -1,0 +1,101 @@
+/* Importa o CSS global */
+@import url('main.css');
+
+/* Estiliza o cabeçalho específico da página Ver Clientes */
+header {
+    background-color: #F2DBD5;
+    color: #412d00;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Estiliza o container principal da página */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Estiliza o título principal da página */
+.container h1 {
+    font-size: 2rem;
+    color: #412d00;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Estiliza a tabela de clientes */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: center;
+}
+
+th {
+    background-color: #D9B2A9;
+    color: #FFF;
+}
+
+tr:nth-child(even) {
+    background-color: #F9F9F9;
+}
+
+tr:hover {
+    background-color: #F2DBD5;
+}
+
+/* Estiliza os botões de ação na tabela */
+button {
+    background-color: #D9B2A9;
+    border: none;
+    color: #FFF;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d89889;
+}
+
+/* Estiliza o link de voltar */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: #412d00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Estiliza o rodapé específico da página */
+footer {
+    background-color: #F2DBD5;
+    color: #412d00;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+}

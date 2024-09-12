@@ -22,37 +22,37 @@ header {
     background-color: #F2DBD5;
     color: #412d00;
     width: 100%;
-    height: 16vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    padding: 1rem;
 }
 
 /* Estiliza o título */
 header .title {
+    font-size: 2rem;
     color: #412d00;
-    padding-top: 1vh;
+    margin-bottom: 0.5rem;
 }
 
 /* Estiliza o menu de navegação */
 header nav {
     display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 8vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
 }
 
 header nav a {
     text-decoration: none;
     color: #412d00;
-    flex: 1;
-    text-align: center;
-    padding: 1vw;
-    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
     transition: background-color 0.3s, color 0.3s;
-    box-sizing: border-box;
+    margin: 0.25rem;
+    border-radius: 4px;
+    border: 1px solid #412d00;
 }
 
 header nav a:hover {
@@ -60,47 +60,61 @@ header nav a:hover {
     color: #fff;
 }
 
+/* Estiliza a área principal */
 main {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+main h1 {
+    font-size: 1.5rem;
     color: #412d00;
 }
 
-main .container form {
-    display: flex;
-    flex-direction: column;
-}
-
-main .container form h1 {
-    padding: 3vh 0 0 0;
-}
-
-main .container form label {
-    padding: 3vh 0 0 0;
-}
-
-main .container form input {
-    height: 5vh;
-}
-
-main .container form button {
-    margin: 5vh;
-    padding: 1vw;
-    background-color: #D9B2A9;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-main .container form button:hover {
-    background-color: #d89889;
-}
-
+/* Estiliza o rodapé */
 footer {
     background-color: #F2DBD5;
     color: #412d00;
     text-align: center;
-    padding: 10px 0;
+    padding: 1rem;
+    font-size: 0.875rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .title {
+        font-size: 1.5rem;
+    }
+
+    header nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    main h1 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header .title {
+        font-size: 1.25rem;
+    }
+
+    header nav a {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    main h1 {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.75rem;
+    }
 }

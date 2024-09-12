@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinanPro - Deletar Cliente</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Adicione um arquivo de estilo opcional -->
 </head>
 <body>
     <header>
@@ -27,7 +28,7 @@
             echo "<p>Nenhum cliente selecionado para exclusão.</p>";
         }
         ?>
-        <a href="index.php">Voltar para a Página Inicial</a>
+        <a href="../../../index.php">Voltar para a Página Inicial</a>
     </div>
     <footer>
         <p>&copy; 2024 FinanPro. Todos os direitos reservados.</p>
