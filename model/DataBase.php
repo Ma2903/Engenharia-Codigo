@@ -87,5 +87,34 @@ public function excluirCliente($cpf) {
     // Feche a conexão
     mysqli_close($conexao);
     }
+    public function buscarClientes() {
+        $conexao = $this->connectBD();
+    
+        // Consulta para selecionar todos os clientes
+        $consulta = "SELECT * FROM cliente";
+        $resultado = mysqli_query($conexao, $consulta);
+    
+        if (mysqli_num_rows($resultado) > 0) {
+            // Exibir os dados em formato de tabela HTML
+            echo "<table border='1'>";
+            echo "<tr><th>CPF</th><th>Nome</th><th>CEP</th><th>Número da Casa</th><th>Telefone</th><th>Email</th></tr>";
+            while ($row = mysqli_fetch_assoc($resultado)) {
+                echo "<tr>";
+                echo "<td>" . $row['cpf'] . "</td>";
+                echo "<td>" . $row['nome'] . "</td>";
+                echo "<td>" . $row['cep'] . "</td>";
+                echo "<td>" . $row['numeroCasa'] . "</td>";
+                echo "<td>" . $row['telefone'] . "</td>";
+                echo "<td>" . $row['email'] . "</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "Nenhum cliente encontrado.";
+        }
+    
+        // Feche a conexão
+        mysqli_close($conexao);
+    }
 }
 ?>
