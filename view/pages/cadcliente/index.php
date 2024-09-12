@@ -40,7 +40,7 @@
             <button type="submit">Cadastrar Cliente</button>
         </form>
         <!-- Link para voltar à página inicial -->
-        <a href="index.php" class="back-link">Voltar para a Página Inicial</a>
+        <a href="../../../index.php" class="back-link">Voltar para a Página Inicial</a>
     </div>
     <footer>
         <p>&copy; 2024 FinanPro. Todos os direitos reservados.</p>

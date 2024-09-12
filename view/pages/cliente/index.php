@@ -3,74 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinanPro - Ver Cliente</title>
+    <title>FinanPro - Ver Clientes</title>
     <link rel="stylesheet" href="styles.css"> <!-- Adicione um arquivo de estilo opcional -->
 </head>
 <body>
     <header>
-        <h1>FinanPro - Cliente</h1>
+        <h1>FinanPro - Clientes</h1>
     </header>
     <div class="container">
-        <h1>Informações do Cliente</h1>
+        <h1>Lista de Clientes</h1>
         <?php
-        // Inclui o arquivo Controller para puxar os dados do cliente
+        // Inclui o arquivo do Controller
         include_once '../../../controller/Controller.php';
+        
+        // Cria uma instância do Controller
         $controller = new Controller();
+        
+        // Busca todos os clientes
+        $clientes = $controller->buscarClientes();
 
-        // Pegue o CPF passado via GET (ex: vercliente.php?cpf=123456789)
-        if (isset($_GET['cpf'])) {
-            $cpf = $_GET['cpf'];
-            // Pegue os dados do cliente por meio de uma função que você pode adicionar ao Controller
-            // Supondo que exista um método no Controller para buscar dados do cliente com o CPF.
-            $cliente = $controller->buscarCliente($cpf); 
-            
-            if ($cliente) {
-                // Exibir os dados do cliente em uma tabela
-                echo "
-                <table border='1'>
-                    <tr>
-                        <th>CPF</th>
-                        <td>{$cliente->getCpf()}</td>
-                    </tr>
-                    <tr>
-                        <th>Nome</th>
-                        <td>{$cliente->getNome()}</td>
-                    </tr>
-                    <tr>
-                        <th>CEP</th>
-                        <td>{$cliente->getCep()}</td>
-                    </tr>
-                    <tr>
-                        <th>Número da Casa</th>
-                        <td>{$cliente->getNumeroCasa()}</td>
-                    </tr>
-                    <tr>
-                        <th>Telefone</th>
-                        <td>{$cliente->getTelefone()}</td>
-                    </tr>
-                    <tr>
-                        <th>Email</th>
-                        <td>{$cliente->getEmail()}</td>
-                    </tr>
-                </table>
-                ";
+        if ($clientes && mysqli_num_rows($clientes) > 0) {
+            // Exibe os clientes em uma tabela
+            echo "
+            <table border='1'>
+                <tr>
+                    <th>CPF</th>
+                    <th>Nome</th>
+                    <th>CEP</th>
+                    <th>Número da Casa</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            ";
 
-                // Botões de editar e deletar
+            // Itera sobre cada cliente e exibe seus dados
+            while ($cliente = mysqli_fetch_assoc($clientes)) {
                 echo "
-                <div class='actions'>
-                    <a href='editcliente.php?cpf={$cliente->getCpf()}'>
-                        <button>Editar Cliente</button>
-                    </a>
-                    <a href='delcliente.php?cpf={$cliente->getCpf()}' onclick='return confirm(\"Tem certeza que deseja excluir este cliente?\")'>
-                        <button>Deletar Cliente</button>
-                    </a>
-                </div>
+                <tr>
+                    <td>{$cliente['cpf']}</td>
+                    <td>{$cliente['nome']}</td>
+                    <td>{$cliente['cep']}</td>
+                    <td>{$cliente['numeroCasa']}</td>
+                    <td>{$cliente['telefone']}</td>
+                    <td>{$cliente['email']}</td>
+                    <td>
+                        <a href='../editcliente/?cpf={$cliente['cpf']}'>
+                            <button>Editar</button>
+                        </a>
+                        <a href='delcliente.php?cpf={$cliente['cpf']}' onclick='return confirm(\"Tem certeza que deseja excluir este cliente?\")'>
+                            <button>Deletar</button>
+                        </a>
+                    </td>
+                </tr>
                 ";
-            } else {
-                echo "<p>Cliente não encontrado.</p>";
             }
+
+            echo "</table>";
         } else {
-            echo "<p>Nenhum cliente selecionado.</p>";
+            echo "<p>Nenhum cliente encontrado.</p>";
         }
         ?>
         <a href="../../../index.php" class="back-link">Voltar para a Página Inicial</a>

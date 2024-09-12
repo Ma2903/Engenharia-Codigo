@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $controller->editarCliente($cpf, $nome, $cep, $numeroCasa, $telefone, $email);
 
     // Redireciona para a página principal após a edição
-    header("Location: vercliente.php?cpf=$cpf");
+    header("Location: ../cliente/");
     exit;
 }
 ?>

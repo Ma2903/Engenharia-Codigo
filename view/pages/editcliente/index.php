@@ -11,17 +11,35 @@
     </header>
     <div class="container">
         <?php
-        // Inclui o arquivo Controller
-        include_once '../../../controller/Controller.php';
-        $controller = new Controller();
+        // Inclui o arquivo DataBase e Cliente
+        include_once '../../../model/DataBase.php';
+        include_once '../../../model/Cliente.php';
+
+        // Cria uma nova instância da classe DataBase
+        $db = new DataBase("localhost", "root", "", "finanpro");
 
         // Verifica se o CPF foi passado via GET
         if (isset($_GET['cpf'])) {
             $cpf = $_GET['cpf'];
-            // Pegue os dados do cliente pelo CPF
-            $cliente = $controller->buscarCliente($cpf);
 
-            if ($cliente) {
+            // Consulta o cliente pelo CPF (você deve criar uma função buscarCliente pelo CPF)
+            $conexao = $db->connectBD();
+            $consulta = "SELECT * FROM cliente WHERE cpf='$cpf'";
+            $resultado = mysqli_query($conexao, $consulta);
+
+            if ($resultado && mysqli_num_rows($resultado) > 0) {
+                $clienteData = mysqli_fetch_assoc($resultado);
+
+                // Criar um objeto Cliente com os dados recuperados
+                $cliente = new Cliente(
+                    $clienteData['cpf'],
+                    $clienteData['nome'],
+                    $clienteData['cep'],
+                    $clienteData['numeroCasa'],
+                    $clienteData['telefone'],
+                    $clienteData['email']
+                );
+
                 // Exibir o formulário preenchido com os dados do cliente
                 echo "
                 <form method='POST' action='processar_edicao.php'>
@@ -48,6 +66,9 @@
             } else {
                 echo "<p>Cliente não encontrado.</p>";
             }
+
+            // Fechar a conexão
+            mysqli_close($conexao);
         } else {
             echo "<p>Nenhum cliente selecionado para edição.</p>";
         }
