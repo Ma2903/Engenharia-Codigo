@@ -27,9 +27,7 @@ class Controller {
     public function excluirCliente($cpf) {
         $this->DataBase->excluirCliente($cpf);
     }
-
     public function buscarCliente(){
-
+        $this->DataBase->buscarCliente();
     }
-}
 ?>
