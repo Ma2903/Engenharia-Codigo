@@ -47,5 +47,45 @@ class DataBase {
         // Feche a conexão
         mysqli_close($conexao);
     }
+        // Adicionar na classe DataBase
+    public function editarCliente($cliente) {
+        $conexao = $this->connectBD();
+    
+    // Obtenha os dados do cliente
+    $cpf = $cliente->getCpf();
+    $nome = $cliente->getNome();
+    $cep = $cliente->getCep();
+    $numeroCasa = $cliente->getNumeroCasa();
+    $telefone = $cliente->getTelefone();
+    $email = $cliente->getEmail();
+    
+    // Atualize os dados do cliente usando o CPF como chave
+    $consulta = "UPDATE cliente SET nome='$nome', cep='$cep', numeroCasa='$numeroCasa', telefone='$telefone', email='$email' WHERE cpf='$cpf'";
+    
+    if (mysqli_query($conexao, $consulta)) {
+        echo "Registro atualizado com sucesso";
+    } else {
+        echo "Erro ao atualizar: " . mysqli_error($conexao);
+    }
+
+    // Feche a conexão
+    mysqli_close($conexao);
+    }
+    // Adicionar na classe DataBase
+public function excluirCliente($cpf) {
+    $conexao = $this->connectBD();
+    
+    // Consulta para excluir o cliente pelo CPF
+    $consulta = "DELETE FROM cliente WHERE cpf='$cpf'";
+    
+    if (mysqli_query($conexao, $consulta)) {
+        echo "Registro excluído com sucesso";
+    } else {
+        echo "Erro ao excluir: " . mysqli_error($conexao);
+    }
+
+    // Feche a conexão
+    mysqli_close($conexao);
+    }
 }
 ?>

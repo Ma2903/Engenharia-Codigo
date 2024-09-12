@@ -18,5 +18,15 @@ class Controller {
         $cliente = new Cliente($cpf, $nome, $cep, $numeroCasa, $telefone, $email);
         $this->DataBase->inserirCliente($cliente);
     }
+    // Adicionar na classe Controller
+    public function editarCliente($cpf, $nome, $cep, $numeroCasa, $telefone, $email) {
+        $cliente = new Cliente($cpf, $nome, $cep, $numeroCasa, $telefone, $email);
+        $this->DataBase->editarCliente($cliente);
+    }
+
+    public function excluirCliente($cpf) {
+        $this->DataBase->excluirCliente($cpf);
+    }
+
 }
 ?>
