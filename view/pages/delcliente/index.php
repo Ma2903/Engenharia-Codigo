@@ -1,3 +1,6 @@
+<?php
+    include_once '../../global.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,9 +10,7 @@
     <link rel="stylesheet" href="styles.css"> <!-- Adicione um arquivo de estilo opcional -->
 </head>
 <body>
-    <header>
-        <h1>Deletar Cliente</h1>
-    </header>
+    <?php Cabecalho() ?>
     <div class="container">
         <?php
         // Inclui o arquivo Controller
@@ -30,8 +31,6 @@
         ?>
         <a href="../../../index.php">Voltar para a Página Inicial</a>
     </div>
-    <footer>
-        <p>&copy; 2024 FinanPro. Todos os direitos reservados.</p>
-    </footer>
+    <?php Rodape() ?>
 </body>
 </html>

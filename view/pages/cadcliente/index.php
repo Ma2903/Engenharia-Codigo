@@ -1,3 +1,6 @@
+<?php
+    include_once '../../global.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,9 +10,7 @@
     <link rel="stylesheet" href="styles.css"> <!-- Adicione um arquivo de estilo opcional -->
 </head>
 <body>
-    <header>
-        <h1>FinanPro</h1>
-    </header>
+    <?php Cabecalho() ?>
     <div class="container">
         <h1>Cadastro de Cliente</h1>
         <form id="client-form" method="POST" action="processar_cadastro.php">
@@ -43,8 +44,6 @@
         <!-- Link para voltar à página inicial -->
         <a href="../../../index.php" class="back-link">Voltar para a Página Inicial</a>
     </div>
-    <footer>
-        <p>&copy; 2024 FinanPro. Todos os direitos reservados.</p>
-    </footer>
+    <?php Rodape() ?>
 </body>
 </html>
