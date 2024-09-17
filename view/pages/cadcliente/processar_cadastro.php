@@ -2,6 +2,19 @@
 
 // Inclui o arquivo do controller, necessário para lidar com as operações do cliente.
 include_once "../../../controller/Controller.php";
+
+/**
+ * Processa o cadastro de um cliente.
+ *
+ * Recebe os dados do formulário via POST, valida as entradas e usa a classe Controller
+ * para inserir um novo cliente no sistema. Exibe uma mensagem de sucesso e redireciona
+ * para a página inicial após a inserção bem-sucedida.
+ *
+ * @package MeuPacote
+ * @author Manoela
+ */
+
+// Cria uma nova instância do Controller
 $controller = new Controller();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

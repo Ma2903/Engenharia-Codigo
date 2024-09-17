@@ -13,6 +13,18 @@
     <?php Cabecalho() ?>
     <div class="container">
         <?php
+        /**
+         * Edita um cliente existente no banco de dados.
+         *
+         * Inclui os arquivos necessários para a conexão com o banco de dados e manipulação
+         * dos dados do cliente. Recupera os dados do cliente com base no CPF fornecido via GET,
+         * exibe um formulário preenchido com os dados do cliente para edição e permite atualizar
+         * as informações através de um formulário POST.
+         *
+         * @package MeuPacote
+         * @author Manoela
+         */
+
         // Inclui o arquivo DataBase e Cliente
         include_once '../../../model/DataBase.php';
         include_once '../../../model/Cliente.php';

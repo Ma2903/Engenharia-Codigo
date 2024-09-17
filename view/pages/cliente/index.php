@@ -17,6 +17,17 @@
         // Inclui o arquivo do Controller
         include_once '../../../controller/Controller.php';
         
+        /**
+         * Cria uma instância do Controller e busca todos os clientes.
+         *
+         * Usa a classe Controller para recuperar todos os registros de clientes
+         * do banco de dados e exibi-los em uma tabela HTML. Também fornece opções
+         * para editar ou deletar cada cliente.
+         *
+         * @package MeuPacote
+         * @author Manoela
+         */
+        
         // Cria uma instância do Controller
         $controller = new Controller();
         
@@ -49,12 +60,8 @@
                     <td>{$cliente['telefone']}</td>
                     <td>{$cliente['email']}</td>
                     <td>
-                        <a href='../editcliente/?cpf={$cliente['cpf']}'>
-                            <button>Editar</button>
-                        </a>
-                        <a href='../delcliente/?cpf={$cliente['cpf']}' onclick='return confirm(\"Tem certeza que deseja excluir este cliente?\")'>
-                            <button>Deletar</button>
-                        </a>
+                        <a href='../editcliente/?cpf={$cliente['cpf']}'><button>Editar</button></a>
+                        <a href='../delcliente/?cpf={$cliente['cpf']}' onclick='return confirm(\"Tem certeza que deseja excluir este cliente?\")'><button>Deletar</button></a>
                     </td>
                 </tr>
                 ";

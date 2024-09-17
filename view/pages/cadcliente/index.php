@@ -15,7 +15,7 @@
         <h1>Cadastro de Cliente</h1>
         <form id="client-form" method="POST" action="processar_cadastro.php">
             <!-- Campo para inserção do CPF -->
-            <label for="nome">CPF:</label>
+            <label for="cpf">CPF:</label>
             <input type="text" id="cpf" name="cpf" required>
 
             <!-- Campo para inserção do nome do cliente -->

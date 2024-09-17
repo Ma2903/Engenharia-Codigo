@@ -15,6 +15,18 @@
         <?php
         // Inclui o arquivo Controller
         include_once '../../../controller/Controller.php';
+        
+        /**
+         * Exclui um cliente do banco de dados com base no CPF fornecido.
+         *
+         * Recebe um CPF via GET e usa a classe Controller para excluir o cliente
+         * correspondente do banco de dados. Exibe uma mensagem de sucesso após a
+         * exclusão ou uma mensagem de erro se o CPF não for fornecido.
+         *
+         * @package MeuPacote
+         * @author Manoela
+         */
+
         $controller = new Controller();
 
         // Verifica se o CPF foi passado via GET

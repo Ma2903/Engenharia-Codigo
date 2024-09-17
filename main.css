@@ -1,12 +1,13 @@
-/* Front-End: Joao Vieira - ADS Fatec */
-/* Reseta a estilizacao das paginas */
+/* Front-End: João Pedro Vieira - ADS Fatec */
+
+/* Reseta a estilização das páginas */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* Define a estilizacao base para o site */
+/* Define a estilização base para o site */
 body {
     display: flex;
     flex-direction: column;
@@ -17,7 +18,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Define a estilizacao para o cabecalho do site */
+/* Define a estilização para o cabeçalho do site */
 header {
     background-color: #F2DBD5;
     color: #412d00;
