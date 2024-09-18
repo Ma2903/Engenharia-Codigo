@@ -28,6 +28,10 @@
     function Rodape(){
         echo '<footer>
             <p>&copy; 2024 FinanPro. Todos os direitos reservados.</p>
+            <p>Daniel José Dantas Jacometo</p>
+            <p>João Pedro Garcia Girotto</p>
+            <p>João Pedro Vieira Pereira</p>
+            <p>Manoela Pinheiro da Silva</p>
         </footer>';
     }
 ?>

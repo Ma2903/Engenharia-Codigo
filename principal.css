@@ -1,0 +1,36 @@
+/* Front-End: João Pedro Vieira - ADS Fatec */
+
+@import url('main.css');
+
+/* Reseta a estilização das páginas */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Define a estilização base para o site */
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: #F4EEED;
+    color: #412d00;
+    font-family: Arial, sans-serif;
+}
+
+/* Estiliza a área principal */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+main h1 {
+    font-size: 1.5rem;
+    color: #412d00;
+}
